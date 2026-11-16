@@ -28,6 +28,12 @@ public class Paciente {
             );
         }
 
+        if (apellidos == null) {
+            throw new IllegalArgumentException(
+                    "Los apellidos no pueden ser null"
+            );
+        }
+
         this.documento = documento;
         this.nombres = nombres;
         this.apellidos = apellidos;
