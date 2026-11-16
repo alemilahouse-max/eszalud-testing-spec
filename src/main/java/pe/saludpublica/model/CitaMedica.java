@@ -47,7 +47,7 @@ public class CitaMedica {
         this.doctorId = doctorId;
         this.especialidadId = especialidadId;
         this.fechaHora = fechaHora;
-        this.estado = estado;
+        this.estado = (estado == null) ? "PROGRAMADA" : estado;
     }
 
     public String getPacienteId() {
