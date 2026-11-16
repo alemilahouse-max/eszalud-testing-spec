@@ -9,12 +9,19 @@ public class Paciente {
     private final String telefono;
     private final String correo;
 
+
     public Paciente(
             String documento,
             String nombres,
             String apellidos,
             String telefono,
             String correo) {
+
+        if (documento == null) {
+            throw new IllegalArgumentException(
+                    "El documento no puede ser null"
+            );
+        }
 
         this.documento = documento;
         this.nombres = nombres;
@@ -42,4 +49,6 @@ public class Paciente {
     public String getCorreo() {
         return correo;
     }
+
+
 }
