@@ -36,6 +36,12 @@ public class CitaMedica {
             );
         }
 
+        if (fechaHora == null) {
+            throw new IllegalArgumentException(
+                    "La fecha y hora de la cita médica no pueden ser null"
+            );
+        }
+
 
         this.pacienteId = pacienteId;
         this.doctorId = doctorId;
