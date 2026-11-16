@@ -24,6 +24,12 @@ public class CitaMedica {
             );
         }
 
+        if (doctorId == null) {
+            throw new IllegalArgumentException(
+                    "El identificador del doctor no puede ser null"
+            );
+        }
+
 
         this.pacienteId = pacienteId;
         this.doctorId = doctorId;
