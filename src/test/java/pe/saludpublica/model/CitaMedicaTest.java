@@ -151,4 +151,30 @@ class CitaMedicaTest {
         assertEquals("CANCELADA", cita.getEstado());
     }
 
+    @Test
+    @DisplayName("CIT-008: Verificar los getters de la cita médica")
+    void shouldReturnAppointmentAttributesThroughGetters() {
+
+        LocalDateTime fechaHora = LocalDateTime.of(
+                2026, 11, 20, 10, 30
+        );
+
+        CitaMedica cita = new CitaMedica(
+                "PAC001",
+                "DOC001",
+                "ESP001",
+                fechaHora,
+                "PROGRAMADA"
+        );
+
+        assertAll(
+                "Verificar atributos de la cita médica",
+                () -> assertEquals("PAC001", cita.getPacienteId()),
+                () -> assertEquals("DOC001", cita.getDoctorId()),
+                () -> assertEquals("ESP001", cita.getEspecialidadId()),
+                () -> assertEquals(fechaHora, cita.getFechaHora()),
+                () -> assertEquals("PROGRAMADA", cita.getEstado())
+        );
+    }
+
 }
