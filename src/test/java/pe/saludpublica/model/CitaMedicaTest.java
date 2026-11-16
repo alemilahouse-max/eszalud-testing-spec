@@ -113,4 +113,23 @@ class CitaMedicaTest {
         );
     }
 
+    @Test
+    @DisplayName("CIT-006: Crear cita médica sin estado")
+    void shouldAssignDefaultStatusWhenNull() {
+
+        LocalDateTime fechaHora = LocalDateTime.of(
+                2026, 11, 20, 10, 30
+        );
+
+        CitaMedica cita = new CitaMedica(
+                "PAC001",
+                "DOC001",
+                "ESP001",
+                fechaHora,
+                null
+        );
+
+        assertEquals("PROGRAMADA", cita.getEstado());
+    }
+
 }
