@@ -43,4 +43,21 @@ class PacienteTest {
             );
         });
     }
+
+
+    @Test
+    @DisplayName("PAC-003: Crear paciente sin nombres")
+    void shouldRejectPatientWithNullNames() {
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            new Paciente(
+                    "12345678",
+                    null,
+                    "Pérez",
+                    "987654321",
+                    "ana@mail.com"
+            );
+        });
+    }
+
 }
