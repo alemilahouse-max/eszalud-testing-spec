@@ -27,4 +27,20 @@ class PacienteTest {
         assertEquals("987654321", paciente.getTelefono());
         assertEquals("ana@mail.com", paciente.getCorreo());
     }
+
+
+    @Test
+    @DisplayName("PAC-002: Crear paciente sin documento")
+    void shouldRejectPatientWithNullDocument() {
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            new Paciente(
+                    null,
+                    "Ana",
+                    "Pérez",
+                    "987654321",
+                    "ana@mail.com"
+            );
+        });
+    }
 }
