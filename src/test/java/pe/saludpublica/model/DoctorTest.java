@@ -92,4 +92,25 @@ class DoctorTest {
         );
     }
 
+    @Test
+    @DisplayName("DOC-006: Verificar los atributos del doctor")
+    void shouldReturnCorrectDoctorAttributes() {
+
+        Doctor doctor = new Doctor(
+                "87654321",
+                "María",
+                "Fernández",
+                "CMP98765",
+                "ESP002"
+        );
+
+        assertAll(
+                () -> assertEquals("87654321", doctor.getDocumento()),
+                () -> assertEquals("María", doctor.getNombres()),
+                () -> assertEquals("Fernández", doctor.getApellidos()),
+                () -> assertEquals("CMP98765", doctor.getColegiatura()),
+                () -> assertEquals("ESP002", doctor.getEspecialidad())
+        );
+    }
+
 }
