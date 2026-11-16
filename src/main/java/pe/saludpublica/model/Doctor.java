@@ -34,6 +34,12 @@ public class Doctor {
             );
         }
 
+        if (colegiatura == null) {
+            throw new IllegalArgumentException(
+                    "La colegiatura del doctor no puede ser null"
+            );
+        }
+
 
         this.documento = documento;
         this.nombres = nombres;
