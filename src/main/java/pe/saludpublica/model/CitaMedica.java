@@ -30,6 +30,12 @@ public class CitaMedica {
             );
         }
 
+        if (especialidadId == null) {
+            throw new IllegalArgumentException(
+                    "El identificador de la especialidad no puede ser null"
+            );
+        }
+
 
         this.pacienteId = pacienteId;
         this.doctorId = doctorId;
