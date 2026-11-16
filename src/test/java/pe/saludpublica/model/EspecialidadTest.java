@@ -38,4 +38,25 @@ class EspecialidadTest {
         );
     }
 
+    @Test
+    @DisplayName("ESP-003: Verificar los atributos de la especialidad")
+    void shouldReturnCorrectSpecialtyAttributes() {
+
+        Especialidad especialidad = new Especialidad(
+                "Pediatría",
+                "Atención médica de niños y adolescentes"
+        );
+
+        assertAll(
+                () -> assertEquals(
+                        "Pediatría",
+                        especialidad.getNombre()
+                ),
+                () -> assertEquals(
+                        "Atención médica de niños y adolescentes",
+                        especialidad.getDescripcion()
+                )
+        );
+    }
+
 }
