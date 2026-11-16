@@ -37,7 +37,6 @@ class CitaMedicaTest {
         );
     }
 
-
     @Test
     @DisplayName("CIT-002: Crear cita médica sin identificador del paciente")
     void shouldRejectAppointmentWithoutPatientId() {
@@ -51,6 +50,26 @@ class CitaMedicaTest {
                 () -> new CitaMedica(
                         null,
                         "DOC001",
+                        "ESP001",
+                        fechaHora,
+                        "PROGRAMADA"
+                )
+        );
+    }
+
+    @Test
+    @DisplayName("CIT-003: Crear cita médica sin identificador del doctor")
+    void shouldRejectAppointmentWithoutDoctorId() {
+
+        LocalDateTime fechaHora = LocalDateTime.of(
+                2026, 11, 20, 10, 30
+        );
+
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> new CitaMedica(
+                        "PAC001",
+                        null,
                         "ESP001",
                         fechaHora,
                         "PROGRAMADA"
