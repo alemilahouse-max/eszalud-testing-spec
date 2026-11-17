@@ -42,8 +42,12 @@ La aplicación abrió correctamente.
 Registros observados:
 - Pacientes: 18.
 - Especialidades: 4.
-- Doctores: 0.
-- Citas médicas: 0.
+- Doctores: 5.
+- Citas médicas: 3.
+
+Se verificó que los doctores y las citas médicas
+aparecen correctamente en MongoDB Compass
+y en la aplicación EsZalud.
 
 Las pruebas unitarias se ejecutan de manera independiente
 de la base de datos MongoDB.
